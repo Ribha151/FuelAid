@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#3f51b5">
+	<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/images/FUEL AID_logo.png">
+
+    <link rel="stylesheet" href="/assets/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/assets/css/aos.css">
+
+    <link rel="stylesheet" href="/assets/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/assets/css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="/assets/css/flaticon.css">
+    <link rel="stylesheet" href="/assets/css/icomoon.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/css/sidebar.css">
+	<title> <%= typeof title != 'undefined' ? title : "FuelAid" %> </title>
+</head>
+
+<body>
+	<%- include('../partials/header') %>
+	<%- include('../partials/alerts') %>
+
+<style>
+	header{
+		background-color: #403d3d!important;
+	}
+   header .navbar, .bg-dark, .navbar-dark, .navbar-light {
+	background-color: #403d3d!important;
+      background-image: none !important;
+      box-shadow: none !important;
+   }
+   .logo-container img {
+    height: 0.9em;
+    width: auto;
+}
+.container h5 {
+        color: #403d3d;
+    }
+    .table th, .table td {
+		background-color: black !important;
+        vertical-align: middle !important;
+    }
+	.table tbody tr td{
+		background-color: none !important;
+	}
+   .rounded{
+	background-color: #7d6148 !important;
+   }
+   .primary{
+		background-color: #473016 !important;
+   }
+   .danger{
+		background-color: #57371a7a !important;
+   }
+</style>
+
+<main>
+	<%- include('../partials/customerSidebar') %>
+	
+	<div id="main-wrapper">
+		<br>
+		<div class="bg-white shadow-sm p-3">
+			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+			<h5 class="m-0 color-theme d-inline-block">Dashboard</h5>
+		</div>
+<!-- <br> -->
+<!-- <div class="d-flex gap-3 flex-wrap m-4 text-white">
+			
+	<div class="danger rounded p-3" style="width: 250px;">
+		<div class="fs-1"><%= numPendingDonations %></div>
+		<div class="fs-5">Pending requests</div>
+	</div>
+	
+	<div class="rounded p-3" style="width: 250px;">
+		<div class="fs-1"><%= numAcceptedDonations %></div>
+		<div class="fs-5">Accepted requests</div>
+	</div>
+	
+	<div class="rounded p-3" style="width: 250px;">
+		<div class="fs-1"><%= numCollectedDonations %></div>
+		<div class="fs-5">Completed requests</div>
+	</div>
+</div> -->
+<br>
+		<!-- Guidelines Section -->
+		<div class="guidelines-box">
+			<h5 class="fw-bold mb-3" style="margin:10px; color: #403d3d;"><strong>Guidelines</strong></h5>
+			<ol style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+						font-size: 20px;">
+				<li><strong>Request a Service:</strong> Click on "Request Service" in the sidebar to select the type of service you need (Fuel Delivery, Roadside Assistance, etc.), fill in the details, and submit your request.</li>
+				<li><strong>Pending Request:</strong> View your service requests that have not yet been accepted. This helps you keep track of pending actions.</li>
+				<li><strong>Live Tracking:</strong> Once your request is accepted by a service provider, you can track their live location here. After service completion, you’ll be able to proceed with payment.</li>
+				<li><strong>Service History:</strong> See the full history of your requests including past completed and ongoing service records.</li>
+			</ol>
+		</div>
+
+	<!-- Pricing Table Section -->
+<div class="container my-4">
+    <h5 class="fw-bold mb-3" style="color: #403d3d;">Service Pricing Table</h5>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Category</th>
+                    <th>Service</th>
+                    <th>Base Charge (₹)</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Roadside Assistance -->
+                <tr><td rowspan="6" class="fw-bold align-middle">Roadside Assistance</td><td>Battery Jump Start</td><td>₹300</td><td>Quick response</td></tr>
+                <tr><td>Flat Tyre Repair</td><td>₹250</td><td>Minor labor involved</td></tr>
+                <tr><td>Lockout Assistance</td><td>₹200</td><td>Minimal tool usage</td></tr>
+                <tr><td>Minor Repairs</td><td>₹400</td><td>On-site small fixes</td></tr>
+                <tr><td>Towing Services</td><td>₹700</td><td>Partnered tow trucks</td></tr>
+                <tr><td>Vehicle Custody</td><td>₹150</td><td>Handling and wait time</td></tr>
+
+                <!-- RoadReady Maintenance -->
+                <tr><td rowspan="4" class="fw-bold align-middle">RoadReady Maintenance</td><td>Periodic Maintenance</td><td>₹600</td><td>Routine vehicle check-up</td></tr>
+                <tr><td>Vehicle Repair</td><td>₹700</td><td>Covers general repairs</td></tr>
+                <tr><td>Accessory Fitment</td><td>₹500</td><td>Installation (speakers, dashcams, etc.)</td></tr>
+                <tr><td>Engine Repairs</td><td>₹1000</td><td>Expert mechanical work</td></tr>
+
+                <!-- Fuel Services -->
+                <tr><td rowspan="3" class="fw-bold align-middle">Fuel Services</td><td>Fuel Delivery (Petrol/Diesel)</td><td>Varies</td><td>Depends on location & fuel price</td></tr>
+                <tr><td>Fuel Tank Cleaning</td><td>₹500</td><td>Time-intensive service</td></tr>
+                <tr><td>Fuel Quality Testing</td><td>₹300</td><td>Basic quality check</td></tr>
+            </tbody>
+        </table>
+        <p class="text-muted mt-2"><strong>Note:</strong> Additional ₹12/km travel charges apply for all services, assuming provider's vehicle uses petrol.</p>
+    </div>
+</div>
+
+
+<!-- How Fuel Services Work Section -->
+<div class="container mt-5">
+    <h5 class="fw-bold mb-3" style="color: #403d3d;">How Fuel Delivery Works</h5>
+    <p style="font-size: 18px;">Our trained professionals deliver fuel directly to your location using safety-compliant trucks and sealed containers. Here's a quick look at our process:</p>
+    
+    <div class="row text-center">
+        <div class="col-md-3 col-sm-6 mb-4">
+            <img src="/assets/images/f1.jpg" alt="Fuel Truck 1" class="img-fluid rounded shadow">
+            <!-- <p class="mt-2">Fuel Truck Dispatch</p> -->
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            <img src="/assets/images/f2.jpg" alt="Fuel Truck 2" class="img-fluid rounded shadow">
+            <!-- <p class="mt-2">On-site Refueling</p> -->
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            <img src="/assets/images/c1.jpg" alt="Fuel Container 1" class="img-fluid rounded shadow">
+            <!-- <p class="mt-2">Sealed Fuel Container</p> -->
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            <img src="/assets/images/c2.jpg" alt="Fuel Container 2" class="img-fluid rounded shadow">
+            <!-- <p class="mt-2">Delivered to Vehicle</p> -->
+        </div>
+		<p class="mt-2">These equipments are made up of High-Density Polyethylene(HDPE)</p>
+    </div>
+</div>
+
+	</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<script src="/assets/js/script.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const header = document.querySelector("header");
+			if (header) {
+				header.style.backgroundColor = "#554635";
+			}
+		});
+	</script>
+</body>
+</html>
