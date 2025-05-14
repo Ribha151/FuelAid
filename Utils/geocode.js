@@ -22,7 +22,7 @@
 //           limit: 1,
 //         },
 //         headers: {
-//           'User-mechanic': 'Samvedana/1.0 (ribhanishal@gmail.com)', // Replace with your app name and contact email
+//           'User-mechanic': '', // Replace with your app name and contact email
 //         },
 //       });
 
@@ -60,7 +60,7 @@ const limiter = new Bottleneck({
 async function getCoordinates(address) {
   return limiter.schedule(async () => {
     try {
-      const apiKey = '04b5f2f73deca0efd30e9a3965717a63'; // Replace with your PositionStack API key
+      const apiKey = ''; // Replace with your PositionStack API key
       const url = `http://api.positionstack.com/v1/forward`;
 
       // Make the API request
